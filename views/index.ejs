@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Updates</title>
+    <link rel="stylesheet" type="text/css" href="/;;;css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="/">Codemaza</a>
+            </div>
+            <ul class="nav navbar-nav">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/services">Services</a></li>
+            </ul>
+        </div>
+</nav>
+    <div class="container">
+        <center><h2>Weather updates:</h2>
+      <fieldset>
+        <form action="/" method="post">
+          <div class="form-group row">
+            <input style="max-width:250px;" name="yname" type="text" class="form-control" placeholder="Enter your name" required>
+          </div>  
+          <div class="form-group row">
+          <input style="max-width:250px;" name="city" type="text" class="form-control" placeholder="Enter a City" required>
+          </div>
+          <div class="form-group row">
+          <input type="submit" class="btn btn-primary" value="Get Weather">
+          </div>
+        </form>
+        <% if(weather !== null){ %>
+          <p><strong>Hello <%=yname %>,</strong></p>
+          <p style="color:green; font-size: 16px;"><%= weather %> </p>
+
+        <% } %>
+
+        <% if(error !== null){ %>
+          <p><strong>Hello <%=yname %>,</strong></p>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+      </center>
+    </div>
+  </body>
+</html>
